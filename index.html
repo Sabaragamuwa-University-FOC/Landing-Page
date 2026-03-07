@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SUSL Faculty of Computing | GitHub Portal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script type="module" src="https://unpkg.com/lucide@latest"></script>
+  </head>
+  <body>
+    <!-- Background Elements -->
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+    <div class="glow glow-3"></div>
+
+    <nav class="navbar glass-effect">
+      <div class="logo">
+        <a href="https://www.sab.ac.lk/computing/" target="_blank" style="display: flex; align-items: center; gap: 0.5rem;">
+          <img src="images/Logo Sab Transparent.png" alt="SUSL Logo" style="height: 100px; width: auto;" onerror="this.src=''; this.alt='SUSL';">
+          <i data-lucide="github" class="icon"></i>
+          <span>SUSL <span class="highlight">Computing</span></span>
+        </a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="https://www.sab.ac.lk/computing/" target="_blank">Faculty Website</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#departments">Departments</a></li>
+        <li><a href="#guidelines">Guidelines</a></li>
+        <li><a href="request-form.html" class="btn-primary">Join Now</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="hero-content">
+          <div class="badge">Official Organization</div>
+          <h1 class="hero-title">
+            Welcome to the Future of <br /><span class="gradient-text"
+              >Computing at SUSL</span
+            >
+          </h1>
+          <p class="hero-subtitle">
+            The official GitHub Organization for the Faculty of Computing,
+            Sabaragamuwa University of Sri Lanka. Collaborate, innovate, and
+            showcase your projects to the world.
+          </p>
+          <div class="hero-actions">
+            <a href="request-form.html" class="btn btn-primary-glow">
+              <i data-lucide="user-plus"></i> Join the Org
+            </a>
+            <a href="#guidelines" class="btn btn-secondary">
+              <i data-lucide="book-open"></i> Read Guidelines
+            </a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="glass-card mockup-card">
+            <div class="card-header">
+              <div class="dots"><span></span><span></span><span></span></div>
+              <div class="path">~/susl-computing/projects</div>
+            </div>
+            <div class="card-body terminal">
+              <p>
+                <span class="prompt">$</span> git clone
+                https://github.com/SUSL-Computing/Cap_SE_21_04_AI-System.git
+              </p>
+              <p class="output">Cloning into 'Cap_SE_21_04_AI-System'...</p>
+              <p class="output">remote: Enumerating objects: 120, done.</p>
+              <p class="output">
+                Receiving objects: 100% (120/120), 4.2 MB | 6.5 MB/s, done.
+              </p>
+              <p><span class="prompt">$</span> cd Cap_SE_21_04_AI-System</p>
+              <p><span class="prompt cursor-blink">$</span> _</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="departments" class="section">
+        <div class="section-header">
+          <h2>Our <span class="highlight">Departments</span></h2>
+          <p>
+            The Faculty of Computing comprises three dynamic departments driving
+            innovation.
+          </p>
+        </div>
+        <div class="grid cards-grid">
+          <div class="glass-card dept-card">
+            <div class="dept-icon cis-icon">
+              <i data-lucide="network"></i>
+            </div>
+            <h3>Computing & Information Systems</h3>
+            <p>
+              Focusing on the application of IT in business, management, and
+              solving real-world organizational challenges.
+            </p>
+            <div class="dept-badge">CIS</div>
+          </div>
+          <div class="glass-card dept-card">
+            <div class="dept-icon se-icon">
+              <i data-lucide="code-2"></i>
+            </div>
+            <h3>Software Engineering</h3>
+            <p>
+              Engineering robust, scalable, and secure software systems using
+              industry best practices and modern technologies.
+            </p>
+            <div class="dept-badge">SE</div>
+          </div>
+          <div class="glass-card dept-card">
+            <div class="dept-icon ds-icon">
+              <i data-lucide="database"></i>
+            </div>
+            <h3>Data Science</h3>
+            <p>
+              Extracting meaningful insights from complex data streams utilizing
+              advanced AI and machine learning techniques.
+            </p>
+            <div class="dept-badge">DS</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="guidelines" class="section">
+        <div class="section-header">
+          <h2>Repository <span class="highlight">Guidelines</span></h2>
+          <p>
+            Standardized naming conventions for all academic projects hosted
+            within the organization.
+          </p>
+        </div>
+
+        <div class="guidelines-container">
+          <div class="glass-card guideline-info">
+            <h3>Project Categories</h3>
+            <ul class="feature-list">
+              <li>
+                <i data-lucide="check-circle-2"></i>
+                <strong>Capstone Projects</strong> - Final year comprehensive
+                projects
+              </li>
+              <li>
+                <i data-lucide="check-circle-2"></i>
+                <strong>Research Projects</strong> - Academic research
+                initiatives
+              </li>
+              <li>
+                <i data-lucide="check-circle-2"></i>
+                <strong>Web Projects</strong> - Web development coursework
+              </li>
+              <li>
+                <i data-lucide="check-circle-2"></i>
+                <strong>Mini Projects</strong> - Semester-based minor
+                implementations
+              </li>
+            </ul>
+          </div>
+
+          <div class="glass-card naming-convention">
+            <h3>The Capstone Naming Formula</h3>
+            <div class="formula-box">
+              <span class="segment tag">Cap</span> _
+              <span class="segment dept tooltip" data-tip="SE, CIS, or DS"
+                >Dept</span
+              >
+              _
+              <span class="segment year tooltip" data-tip="e.g., 20, 21, 22"
+                >BatchYear</span
+              >
+              _
+              <span class="segment group tooltip" data-tip="e.g., 01, 05, 12"
+                >GrpNumber</span
+              >
+              _
+              <span
+                class="segment title tooltip"
+                data-tip="Use-Hyphens-For-Spaces"
+                >Project-Title</span
+              >
+            </div>
+
+            <div class="examples">
+              <h4>Examples</h4>
+              <div class="code-snippet">
+                <code>Cap_SE_20_05_Automated-Grading-System</code>
+                <button class="copy-btn" aria-label="Copy code">
+                  <i data-lucide="copy"></i>
+                </button>
+              </div>
+              <div class="code-snippet">
+                <code>Cap_DS_21_12_Predictive-Crop-Analytics</code>
+                <button class="copy-btn" aria-label="Copy code">
+                  <i data-lucide="copy"></i>
+                </button>
+              </div>
+              <div class="code-snippet">
+                <code>Cap_CIS_22_03_Smart-Inventory-Tracker</code>
+                <button class="copy-btn" aria-label="Copy code">
+                  <i data-lucide="copy"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="other-projects-note">
+              <p>
+                For other projects, replace <code>Cap</code> with
+                <code>Web</code>, <code>Mini</code>, or <code>Research</code>.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="join" class="section cta-section">
+        <div class="glass-card cta-card">
+          <h2>Ready to <span class="gradient-text">Join?</span></h2>
+          <p>
+            Get access to the official organization to host your academic
+            projects.
+          </p>
+          <div class="steps-grid">
+            <div class="step">
+              <div class="step-num">1</div>
+              <h4>Create GitHub Account</h4>
+              <p>
+                Ensure you have a professional GitHub profile with your real
+                name.
+              </p>
+            </div>
+            <div class="step">
+              <div class="step-num">2</div>
+              <h4>Fill the Request Form</h4>
+              <p>
+                Submit your student details through the official faculty portal.
+              </p>
+            </div>
+            <div class="step">
+              <div class="step-num">3</div>
+              <h4>Accept Invitation</h4>
+              <p>
+                Check your email for the GitHub organization invitation and
+                accept it.
+              </p>
+            </div>
+          </div>
+          <div class="cta-actions">
+            <a
+              href="request-form.html"
+              class="btn btn-primary-glow btn-large"
+            >
+              Request Access Form <i data-lucide="arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="glass-effect main-footer">
+      <div class="footer-inner">
+        <div class="footer-center">
+          <div class="container footer-grid">      
+            
+            <!-- Column 1: Address -->
+            <div class="footer-first column">
+              <div class="footer-social">
+                <h5>Postal Address</h5>
+                <span>Faculty of Computing, <br>Sabaragamuwa University of Sri Lanka, <br>P.O. Box 02, Belihuloya, 70140, Sri Lanka.</span>
+              </div>
+            </div> 
+            
+            <!-- Column 2: Contact -->
+            <div class="footer-second column">
+              <div class="footer-social">
+                <h5>General Inquiries</h5>
+                <ul class="contact-list">
+                  <li><i class="fas fa-phone"></i> +94 (0)45 2 121 873</li>
+                  <li><i class="fas fa-envelope"></i> <a href="mailto:info@foc.sab.ac.lk">info@foc.sab.ac.lk</a></li>
+                </ul>
+              </div>
+            </div> 
+            
+            <!-- Column 3: Social -->
+            <div class="footer-third column">
+              <div class="footer-social">
+                <h5>Social Media</h5>
+                <ul class="social-links">
+                  <li><a href="https://www.facebook.com/susl.computing" aria-label="Facebook"><i class="fab fa-facebook"></i></a></li>
+                  <li><a href="https://www.linkedin.com/company/susl-computing" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a></li>
+                  <li><a href="https://www.youtube.com/@susl-computing" aria-label="YouTube"><i class="fab fa-youtube"></i></a></li>
+                </ul>
+              </div>
+            </div> 
+            
+            <!-- Column 4: Quick Links -->
+            <div class="footer-four column">
+              <div class="footer-social">
+                <h5>Quick Links</h5>
+                <ul class="quick-links">
+                  <li><a href="https://forms.gle/6Tob5bF579oia89d7/" target="_blank">Web/SM Update Requests</a></li>
+                  <li><a href="https://www.sab.ac.lk/computing/vacancies" target="_blank">Vacancies</a></li>
+                  <li><a href="https://www.sab.ac.lk/computing/downloads" target="_blank">Downloads</a></li>
+                </ul>
+              </div>
+            </div> 
+
+          </div>   
+        </div>
+      </div>   
+
+      <div class="copyright">
+        <div class="container text-center">
+            © Copyright <a href="https://www.sab.ac.lk/computing/">SUSL Faculty of Computing</a> 2026. All Rights Reserved. 
+        </div>   
+      </div>
+    </footer>
+
+    <script>
+      lucide.createIcons();
+    </script>
+    <script src="script.js"></script>
+  </body>
+</html>
