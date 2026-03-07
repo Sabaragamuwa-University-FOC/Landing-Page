@@ -41,7 +41,18 @@ a:hover { color: var(--primary); }
 .btn-primary-glow { background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3); }
 .btn-primary-glow:hover { color: white; box-shadow: 0 6px 20px rgba(220, 38, 38, 0.4); transform: translateY(-2px); }
 .btn-secondary { background: white; color: var(--text-main); border: 1px solid rgba(0, 0, 0, 0.1); }
-.btn-secondary:hover { background: #f1f5f9; transform: translateY(-2px); }
+.btn-secondary:hover { background: rgba(255, 255, 255, 0.2); transform: translateY(-2px); }
+
+/* Custom Cool Loading Animation */
+.flying-plane {
+    animation: fly 1.5s infinite linear;
+}
+@keyframes fly {
+    0% { transform: translate(0, 0) scale(1); opacity: 1; }
+    50% { transform: translate(15px, -15px) scale(0.8); opacity: 0; }
+    51% { transform: translate(-15px, 15px) scale(0.8); opacity: 0; }
+    100% { transform: translate(0, 0) scale(1); opacity: 1; }
+}
 .btn-large { padding: 1rem 2rem; font-size: 1.1rem; }
 
 /* Navbar */
