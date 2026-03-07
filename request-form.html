@@ -217,6 +217,9 @@
       </div>
     </footer>
 
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <script>
         lucide.createIcons();
 
@@ -253,15 +256,34 @@
             })
             .then(response => {
                 console.log("Fetch request completed. Note: with no-cors, response is opaque so we assume success if no network error.");
-                // We add a tiny timeout just to ensure the UI updates smoothly after the log
-                setTimeout(() => {
-                    alert('Request submitted successfully!');
+                
+                // Show amazing success alert
+                Swal.fire({
+                    title: 'Success!',
+                    text: 'Your request has been submitted successfully.',
+                    icon: 'success',
+                    confirmButtonText: 'Great!',
+                    confirmButtonColor: '#dc2626',
+                    background: '#ffffff',
+                    color: '#0f172a',
+                    customClass: {
+                        popup: 'glass-effect'
+                    }
+                }).then(() => {
                     window.location.href = 'index.html';
-                }, 100);
+                });
             })
             .catch(error => {
                 console.error('Submission Error:', error);
-                alert('There was an error submitting your request. Please try again.');
+                
+                // Show error alert
+                Swal.fire({
+                    title: 'Oops...',
+                    text: 'There was an error submitting your request. Please try again.',
+                    icon: 'error',
+                    confirmButtonColor: '#dc2626'
+                });
+
                 submitBtn.innerHTML = originalText;
                 submitBtn.disabled = false;
             });
