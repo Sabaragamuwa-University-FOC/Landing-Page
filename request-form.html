@@ -240,16 +240,27 @@
             submitBtn.innerHTML = 'Submitting... <i class="fas fa-spinner fa-spin" style="margin-left: 8px;"></i>';
             submitBtn.disabled = true;
 
+            // Log what we are sending
+            console.log("Submitting form data...");
+            for (let [key, value] of new FormData(form).entries()) {
+                console.log(`${key}: ${value}`);
+            }
+
             fetch(scriptURL, { 
                 method: 'POST', 
+                mode: 'no-cors', // Essential for Google Apps Script
                 body: new FormData(form)
             })
             .then(response => {
-                alert('Request submitted successfully!');
-                window.location.href = 'index.html';
+                console.log("Fetch request completed. Note: with no-cors, response is opaque so we assume success if no network error.");
+                // We add a tiny timeout just to ensure the UI updates smoothly after the log
+                setTimeout(() => {
+                    alert('Request submitted successfully!');
+                    window.location.href = 'index.html';
+                }, 100);
             })
             .catch(error => {
-                console.error('Error!', error.message);
+                console.error('Submission Error:', error);
                 alert('There was an error submitting your request. Please try again.');
                 submitBtn.innerHTML = originalText;
                 submitBtn.disabled = false;
