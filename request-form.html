@@ -122,20 +122,20 @@
                     <p>Join the official SUSL Computing GitHub Organization</p>
                 </div>
 
-                <form id="access-form" onsubmit="event.preventDefault(); alert('Request submitted successfully!'); window.location.href='index.html';">
+                <form id="access-form">
                     <div class="form-group">
                         <label for="fullName">Full Name</label>
-                        <input type="text" id="fullName" class="form-control" placeholder="John Doe" required>
+                        <input type="text" id="fullName" name="fullName" class="form-control" placeholder="John Doe" required>
                     </div>
 
                     <div class="form-group">
                         <label for="regNo">Registration Number</label>
-                        <input type="text" id="regNo" class="form-control" placeholder="e.g. 21/SE/001" required>
+                        <input type="text" id="regNo" name="regNo" class="form-control" placeholder="e.g. 21/SE/001" required>
                     </div>
 
                     <div class="form-group">
                         <label for="department">Department</label>
-                        <select id="department" class="form-control" required>
+                        <select id="department" name="department" class="form-control" required>
                             <option value="" disabled selected>Select your department</option>
                             <option value="SE">Software Engineering</option>
                             <option value="CIS">Computing & Information Systems</option>
@@ -145,12 +145,12 @@
 
                     <div class="form-group">
                         <label for="githubUser">GitHub Username</label>
-                        <input type="text" id="githubUser" class="form-control" placeholder="johndoe99" required>
+                        <input type="text" id="githubUser" name="githubUser" class="form-control" placeholder="johndoe99" required>
                     </div>
 
                     <div class="form-group">
                         <label for="email">University Email</label>
-                        <input type="email" id="email" class="form-control" placeholder="name@std.sab.ac.lk" required>
+                        <input type="email" id="email" name="email" class="form-control" placeholder="name@std.sab.ac.lk" required>
                     </div>
 
                     <button type="submit" class="btn btn-primary-glow btn-submit">
@@ -219,6 +219,42 @@
 
     <script>
         lucide.createIcons();
+
+        // Google Apps Script Form Submission
+        const form = document.getElementById('access-form');
+        const submitBtn = form.querySelector('.btn-submit');
+        
+        // REPLACE THIS URL WITH YOUR DEPLOYED GOOGLE APPS SCRIPT WEB APP URL
+        const scriptURL = 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE';
+
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            
+            if(scriptURL === 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE') {
+                alert("Please replace the scriptURL in request-form.html with your actual Google Apps Script URL first!");
+                return;
+            }
+
+            // Show loading state
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = 'Submitting... <i class="fas fa-spinner fa-spin" style="margin-left: 8px;"></i>';
+            submitBtn.disabled = true;
+
+            fetch(scriptURL, { 
+                method: 'POST', 
+                body: new FormData(form)
+            })
+            .then(response => {
+                alert('Request submitted successfully!');
+                window.location.href = 'index.html';
+            })
+            .catch(error => {
+                console.error('Error!', error.message);
+                alert('There was an error submitting your request. Please try again.');
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            });
+        });
     </script>
 </body>
 </html>
