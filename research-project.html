@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Project | SUSL Faculty of Computing</title>
+    <link rel="icon" type="image/png" href="images/pavicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .page-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            padding: 8rem 5% 4rem;
+        }
+
+        .content-card {
+            width: 100%;
+            max-width: 900px;
+            padding: 3rem;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .page-header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        .text-section p {
+            color: var(--text-muted);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            font-size: 1.1rem;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            border: 1px dashed rgba(0, 0, 0, 0.2);
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            transition: color 0.2s;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .back-link:hover {
+            color: var(--primary);
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .page-section {
+                padding: 6rem 5% 3rem;
+            }
+            .content-card {
+                padding: 2rem 1.5rem;
+            }
+            .page-header h1 {
+                font-size: 2rem;
+            }
+        }
+        @media (max-width: 480px) {
+            .page-section {
+                padding: 5rem 5% 2rem;
+            }
+            .content-card {
+                padding: 1.5rem 1rem;
+            }
+            .page-header h1 {
+                font-size: 1.7rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Elements -->
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2" style="right: auto; left: 40%;"></div>
+
+    <nav class="navbar glass-effect">
+        <div class="logo">
+            <a href="index.html" style="display: flex; align-items: center; gap: 0.5rem;">
+                <img src="images/Logo Sab Transparent.png" alt="SUSL Logo" style="height: 40px; width: auto;" onerror="this.src=''; this.alt='SUSL';">
+                <i data-lucide="github" class="icon"></i>
+                <span>SUSL <span class="highlight">Computing</span></span>
+            </a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="https://www.sab.ac.lk/computing/" target="_blank">Faculty Website</a></li>
+            <li><a href="index.html">Home</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="page-section">
+            <div class="glass-card content-card">
+                <a href="index.html" class="back-link">
+                    <i data-lucide="arrow-left" style="width: 18px; height: 18px;"></i> Back to Home
+                </a>
+                
+                <div class="page-header">
+                    <h1 class="gradient-text">Research Project</h1>
+                    <p>Academic research initiatives</p>
+                </div>
+
+                <div class="text-section">
+                    <p>
+                        <i data-lucide="clock" style="display: block; margin: 0 auto 1rem; width: 48px; height: 48px; color: var(--primary);"></i>
+                        Details for the Research Project are actively being prepared and will be updated here soon. Stay tuned!
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="glass-effect main-footer">
+      <div class="footer-inner">
+        <div class="footer-center">
+          <div class="container footer-grid">      
+            
+            <div class="footer-first column">
+              <div class="footer-social">
+                <h5>Postal Address</h5>
+                <span>Faculty of Computing, <br>Sabaragamuwa University of Sri Lanka, <br>P.O. Box 02, Belihuloya, 70140, Sri Lanka.</span>
+              </div>
+            </div> 
+            
+            <div class="footer-second column">
+              <div class="footer-social">
+                <h5>General Inquiries</h5>
+                <ul class="contact-list">
+                  <li><i class="fas fa-phone"></i> +94 (0)45 2 121 873</li>
+                  <li><i class="fas fa-envelope"></i> <a href="mailto:info@foc.sab.ac.lk">info@foc.sab.ac.lk</a></li>
+                </ul>
+              </div>
+            </div> 
+            
+            <div class="footer-third column">
+              <div class="footer-social">
+                <h5>Social Media</h5>
+                <ul class="social-links">
+                  <li><a href="https://github.com/Sabaragamuwa-University-FOC" aria-label="GitHub" target="_blank"><i class="fab fa-github"></i></a></li>
+                  <li><a href="https://www.facebook.com/susl.computing" aria-label="Facebook"><i class="fab fa-facebook"></i></a></li>
+                  <li><a href="https://www.linkedin.com/company/susl-computing" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a></li>
+                  <li><a href="https://www.youtube.com/@susl-computing" aria-label="YouTube"><i class="fab fa-youtube"></i></a></li>
+                </ul>
+              </div>
+            </div> 
+            
+            <div class="footer-four column">
+              <div class="footer-social">
+                <h5>Quick Links</h5>
+                <ul class="quick-links">
+                  <li><a href="https://forms.gle/6Tob5bF579oia89d7/" target="_blank">Web/SM Update Requests</a></li>
+                  <li><a href="https://www.sab.ac.lk/computing/vacancies" target="_blank">Vacancies</a></li>
+                  <li><a href="https://www.sab.ac.lk/computing/downloads" target="_blank">Downloads</a></li>
+                </ul>
+              </div>
+            </div> 
+
+          </div>   
+        </div>
+      </div>   
+
+      <div class="copyright">
+        <div class="container text-center">
+            © Copyright <a href="https://www.sab.ac.lk/computing/">SUSL Faculty of Computing</a> 2026. All Rights Reserved. 
+        </div>   
+      </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

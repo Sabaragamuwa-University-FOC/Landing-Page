@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Project (SE4106) | SUSL Faculty of Computing</title>
+    <link rel="icon" type="image/png" href="images/pavicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .page-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            padding: 8rem 5% 4rem;
+        }
+
+        .content-card {
+            width: 100%;
+            max-width: 1100px;
+            padding: 0;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.8);
+        }
+
+        .hero-banner {
+            background: linear-gradient(135deg, var(--primary), #7f1d1d);
+            padding: 4rem 3rem;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-banner::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .course-code {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(4px);
+            padding: 0.4rem 1rem;
+            border-radius: 999px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .hero-banner h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .hero-banner p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 600px;
+            line-height: 1.6;
+        }
+
+        .content-body {
+            padding: 4rem 3rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .intro-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .intro-section h2 i {
+            color: var(--primary);
+        }
+
+        .intro-section p {
+            color: var(--text-muted);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+
+        .info-box {
+            background: #f8fafc;
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            border-radius: 0 8px 8px 0;
+            margin: 2rem 0;
+        }
+
+        .info-box p {
+            margin-bottom: 0;
+            font-size: 0.95rem;
+            color: var(--text-main);
+            font-weight: 500;
+        }
+
+        .objectives-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+
+        .objective-card {
+            background: white;
+            border: 1px solid rgba(0,0,0,0.05);
+            border-radius: 12px;
+            padding: 1.5rem;
+            display: flex;
+            gap: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+        }
+
+        .objective-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(220, 38, 38, 0.08);
+            border-color: rgba(220, 38, 38, 0.2);
+        }
+
+        .obj-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(220, 38, 38, 0.1);
+            color: var(--primary);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .obj-text {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 2rem;
+            transition: color 0.2s;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .back-link:hover {
+            color: white;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 968px) {
+            .content-body {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+        }
+        @media (max-width: 768px) {
+            .page-section { padding: 6rem 5% 3rem; }
+            .hero-banner { padding: 3rem 2rem; }
+            .content-body { padding: 3rem 2rem; }
+            .hero-banner h1 { font-size: 2.2rem; }
+        }
+        @media (max-width: 480px) {
+            .hero-banner { padding: 2.5rem 1.5rem; }
+            .content-body { padding: 2.5rem 1.5rem; }
+            .hero-banner h1 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Elements -->
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2" style="right: auto; left: 40%;"></div>
+
+    <nav class="navbar glass-effect">
+        <div class="logo">
+            <a href="index.html" style="display: flex; align-items: center; gap: 0.5rem;">
+                <img src="images/Logo Sab Transparent.png" alt="SUSL Logo" style="height: 40px; width: auto;" onerror="this.src=''; this.alt='SUSL';">
+                <i data-lucide="github" class="icon"></i>
+                <span>SUSL <span class="highlight">Computing</span></span>
+            </a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="https://www.sab.ac.lk/computing/" target="_blank">Faculty Website</a></li>
+            <li><a href="index.html">Home</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="page-section">
+            <div class="glass-card content-card">
+                
+                <div class="hero-banner">
+                    <a href="index.html" class="back-link">
+                        <i data-lucide="arrow-left" style="width: 18px; height: 18px;"></i> Back to Projects
+                    </a>
+                    <div>
+                        <span class="course-code"><i data-lucide="code" style="width: 14px; height: 14px; display: inline-block; vertical-align: middle; margin-right: 4px;"></i> SE4106</span>
+                        <h1>Web Systems and Technologies</h1>
+                        <p>A compulsory group project module for Bachelor of Science Honours Degree Programme in Software Engineering.</p>
+                    </div>
+                </div>
+
+                <div class="content-body" style="grid-template-columns: 2fr 1fr;">
+                    <!-- Left Column: Intro & Details -->
+                    <div class="intro-section">
+                        <h2><i data-lucide="info"></i> Overview</h2>
+                        <p>
+                            This course enables students to carry out project work to implement a solution for real-world IT problems, under the supervision of an internal supervisor. The Internal Supervisor provided by the respective department is responsible for helping students with any internal matters and monitoring team interaction.
+                        </p>
+                        
+                        <div class="info-box">
+                            <p>
+                                <i data-lucide="users" style="width: 18px; height: 18px; display: inline-block; vertical-align: middle; margin-right: 6px; color: var(--primary);"></i>
+                                Internal Supervisors can schedule meetings with students to assess progress and discuss project work throughout Semester IV.
+                            </p>
+                        </div>
+
+                        <p>
+                            A student is responsible for updating the progress of the project, addressing the feedback given by internal supervisors throughout the semester, and completing the final software product before the end of the semester by covering all requirements and the initially defined scope.
+                        </p>
+                        <p>
+                            Projects are rigorously evaluated by external/internal supervisors and the same panel of evaluators in both the Proposal Presentation and the Final Evaluation.
+                        </p>
+
+                        <h2 style="margin-top: 3rem;"><i data-lucide="target" style="color: var(--primary); display: inline-block; vertical-align: middle; margin-right: 8px;"></i> Key Objectives</h2>
+                        <div class="objectives-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+                            
+                            <div class="objective-card">
+                                <div class="obj-icon"><i data-lucide="globe"></i></div>
+                                <p class="obj-text">Offer students a glimpse into real-world problems and challenges that need web technology-based solutions.</p>
+                            </div>
+                            
+                            <div class="objective-card">
+                                <div class="obj-icon"><i data-lucide="file-check-2"></i></div>
+                                <p class="obj-text">Enable students to create very precise specifications of the web-based IT solution to be designed.</p>
+                            </div>
+
+                            <div class="objective-card">
+                                <div class="obj-icon"><i data-lucide="lightbulb"></i></div>
+                                <p class="obj-text">Create awareness among students of the characteristics of web-based domain areas where IT can be effectively used.</p>
+                            </div>
+
+                            <div class="objective-card">
+                                <div class="obj-icon"><i data-lucide="users-2"></i></div>
+                                <p class="obj-text">Improve the team building, communication and management skills of the students.</p>
+                            </div>
+
+                            <div class="objective-card">
+                                <div class="obj-icon"><i data-lucide="briefcase"></i></div>
+                                <p class="obj-text">Helps in exploring career opportunities in the area of web development and gives insight into real organizations.</p>
+                            </div>
+
+                            <div class="objective-card">
+                                <div class="obj-icon"><i data-lucide="monitor-play"></i></div>
+                                <p class="obj-text">Develop students' ability to apply acquired knowledge to create real-world software and present/demonstrate their work.</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Responsible Person -->
+                    <div class="supervisor-section">
+                        <h2><i data-lucide="user-check"></i> Coordinator</h2>
+                        <div class="glass-card" style="padding: 2rem; text-align: center; margin-top: 1.5rem; background: #ffffff;">
+                            <div style="width: 150px; height: 150px; margin: 0 auto 1.5rem; border-radius: 50%; overflow: hidden; border: 4px solid var(--primary); box-shadow: 0 10px 25px rgba(220, 38, 38, 0.2);">
+                                <img src="images/shehara_webproject.jpg" alt="Mrs. WMLS Abeythunga" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.src=''; this.style.backgroundColor='#f1f5f9'; this.alt='Photo';">
+                            </div>
+                            <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color: var(--text-main);">Mrs. WMLS Abeythunga</h3>
+                            <p style="color: var(--primary); font-weight: 600; font-size: 0.95rem; margin-bottom: 0.2rem;">Lecturer (Prob.)</p>
+                            <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.5rem;">Department of Software Engineering<br>Faculty of Computing</p>
+                            
+                            <a href="mailto:sabeythunga@foc.sab.ac.lk" class="btn btn-secondary" style="width: 100%; justify-content: center; font-size: 0.9rem;">
+                                <i data-lucide="mail" style="width: 16px; height: 16px;"></i> sabeythunga@foc.sab.ac.lk
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="glass-effect main-footer">
+      <div class="footer-inner">
+        <div class="footer-center">
+          <div class="container footer-grid">      
+            
+            <div class="footer-first column">
+              <div class="footer-social">
+                <h5>Postal Address</h5>
+                <span>Faculty of Computing, <br>Sabaragamuwa University of Sri Lanka, <br>P.O. Box 02, Belihuloya, 70140, Sri Lanka.</span>
+              </div>
+            </div> 
+            
+            <div class="footer-second column">
+              <div class="footer-social">
+                <h5>General Inquiries</h5>
+                <ul class="contact-list">
+                  <li><i class="fas fa-phone"></i> +94 (0)45 2 121 873</li>
+                  <li><i class="fas fa-envelope"></i> <a href="mailto:info@foc.sab.ac.lk">info@foc.sab.ac.lk</a></li>
+                </ul>
+              </div>
+            </div> 
+            
+            <div class="footer-third column">
+              <div class="footer-social">
+                <h5>Social Media</h5>
+                <ul class="social-links">
+                  <li><a href="https://github.com/Sabaragamuwa-University-FOC" aria-label="GitHub" target="_blank"><i class="fab fa-github"></i></a></li>
+                  <li><a href="https://www.facebook.com/susl.computing" aria-label="Facebook"><i class="fab fa-facebook"></i></a></li>
+                  <li><a href="https://www.linkedin.com/company/susl-computing" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a></li>
+                  <li><a href="https://www.youtube.com/@susl-computing" aria-label="YouTube"><i class="fab fa-youtube"></i></a></li>
+                </ul>
+              </div>
+            </div> 
+            
+            <div class="footer-four column">
+              <div class="footer-social">
+                <h5>Quick Links</h5>
+                <ul class="quick-links">
+                  <li><a href="https://forms.gle/6Tob5bF579oia89d7/" target="_blank">Web/SM Update Requests</a></li>
+                  <li><a href="https://www.sab.ac.lk/computing/vacancies" target="_blank">Vacancies</a></li>
+                  <li><a href="https://www.sab.ac.lk/computing/downloads" target="_blank">Downloads</a></li>
+                </ul>
+              </div>
+            </div> 
+
+          </div>   
+        </div>
+      </div>   
+
+      <div class="copyright">
+        <div class="container text-center">
+            © Copyright <a href="https://www.sab.ac.lk/computing/">SUSL Faculty of Computing</a> 2026. All Rights Reserved. 
+        </div>   
+      </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

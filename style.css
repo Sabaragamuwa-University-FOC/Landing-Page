@@ -168,3 +168,43 @@ a:hover { color: var(--primary); }
 @media (max-width: 1024px) { .hero { flex-direction: column; text-align: center; padding-top: 10rem; } .hero-subtitle { margin: 0 auto 2.5rem; } .hero-actions { justify-content: center; } .guidelines-container { grid-template-columns: 1fr; } }
 @media (max-width: 768px) { .nav-links { display: none; } .hero-title { font-size: 2.5rem; } .steps-grid { grid-template-columns: 1fr; } .formula-box { justify-content: center; } .footer-grid { grid-template-columns: 1fr 1fr; } .section { padding: 4rem 5%; } .hero-actions { flex-direction: column; width: 100%; max-width: 300px; margin: 0 auto; } .btn { justify-content: center; width: 100%; } }
 @media (max-width: 480px) { .footer-grid { grid-template-columns: 1fr; } .hero-title { font-size: 2rem; } .terminal { font-size: 0.8rem; padding: 1rem; } .dept-badge { font-size: 1.5rem; right: 1rem; top: 1rem; } .cta-card { padding: 3rem 1.5rem; } .cta-card h2 { font-size: 2rem; } .code-snippet { padding: 1rem; } .mockup-card { border-radius: 12px; } }
+
+/* Project List Interactive Styles */
+.feature-list.interactive-list li {
+    padding: 0.8rem;
+    border-radius: 8px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+.feature-list.interactive-list li:hover {
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+}
+.project-text-link {
+    color: var(--text-main);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+.project-text-link strong {
+    transition: all 0.3s ease;
+}
+.project-text-link:hover strong {
+    color: var(--primary);
+    text-shadow: 0 0 15px rgba(220, 38, 38, 0.6);
+}
+.btn-view {
+    padding: 0.4rem 1.2rem;
+    font-size: 0.85rem;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+    border-color: rgba(220, 38, 38, 0.2);
+    color: var(--primary);
+    background: rgba(220, 38, 38, 0.05);
+}
+.btn-view:hover {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+    box-shadow: 0 0 15px rgba(220, 38, 38, 0.4);
+    transform: translateX(3px);
+}
