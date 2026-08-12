@@ -4,377 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Research Project (SE8101) | SUSL Faculty of Computing</title>
-    <meta name="description" content="Research projects of the SE 2020/2021 batch, Department of Software Engineering, Faculty of Computing, Sabaragamuwa University of Sri Lanka.">
+    <meta name="description" content="The SE8101 Research Project of the Department of Software Engineering, Faculty of Computing, Sabaragamuwa University of Sri Lanka — about the module, selection rules, internal supervisors and project archives by batch.">
     <link rel="icon" type="image/png" href="images/pavicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="research.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://unpkg.com/lucide@latest"></script>
-    <style>
-        :root {
-            --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
-        }
-
-        .page-section {
-            min-height: 100vh;
-            display: flex;
-            align-items: flex-start;
-            justify-content: center;
-            padding: 8rem 5% 4rem;
-        }
-
-        .content-card {
-            width: 100%;
-            max-width: 1240px;
-            padding: 0;
-            overflow: hidden;
-            background: rgba(255, 255, 255, 0.8);
-        }
-
-        /* ---------- Hero ---------- */
-        .hero-banner {
-            background: linear-gradient(135deg, var(--primary), #7f1d1d);
-            padding: 4rem 3rem;
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-banner::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -10%;
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
-            border-radius: 50%;
-        }
-
-        .hero-inner { position: relative; z-index: 1; }
-
-        .course-code {
-            display: inline-block;
-            background: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(4px);
-            padding: 0.4rem 1rem;
-            border-radius: 999px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            margin-bottom: 1.5rem;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-        }
-
-        .hero-banner h1 { font-size: 3rem; margin-bottom: 1rem; color: white; }
-        .hero-banner .lede { font-size: 1.1rem; opacity: 0.9; max-width: 640px; line-height: 1.6; }
-
-        .back-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: rgba(255, 255, 255, 0.8);
-            margin-bottom: 2rem;
-            transition: color 0.2s;
-            text-decoration: none;
-            font-weight: 500;
-        }
-        .back-link:hover { color: white; }
-
-        .hero-stats {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2.5rem;
-            margin-top: 2.5rem;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
-        }
-        .stat-num {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 2rem;
-            font-weight: 700;
-            line-height: 1;
-        }
-        .stat-label {
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            opacity: 0.75;
-            margin-top: 0.4rem;
-        }
-
-        /* ---------- Toolbar ---------- */
-        .content-body { padding: 2.5rem 3rem 4rem; }
-
-        .toolbar {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            align-items: center;
-            margin-bottom: 1rem;
-        }
-
-        .search-wrap { position: relative; flex: 1 1 320px; }
-        .search-wrap svg {
-            position: absolute;
-            left: 1rem;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 18px;
-            height: 18px;
-            color: var(--text-muted);
-            pointer-events: none;
-        }
-        .search-wrap input {
-            width: 100%;
-            padding: 0.85rem 1rem 0.85rem 2.9rem;
-            border-radius: 9999px;
-            border: 1px solid rgba(0, 0, 0, 0.1);
-            background: #fff;
-            font-family: 'Outfit', sans-serif;
-            font-size: 1rem;
-            color: var(--text-main);
-            transition: border-color 0.2s, box-shadow 0.2s;
-        }
-        .search-wrap input::placeholder { color: #94a3b8; }
-        .search-wrap input:focus {
-            outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 0 4px rgba(220, 38, 38, 0.1);
-        }
-
-        .filter-select {
-            padding: 0.85rem 2.5rem 0.85rem 1.2rem;
-            border-radius: 9999px;
-            border: 1px solid rgba(0, 0, 0, 0.1);
-            background-color: #fff;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23475569' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
-            background-repeat: no-repeat;
-            background-position: right 1rem center;
-            font-family: 'Outfit', sans-serif;
-            font-size: 1rem;
-            color: var(--text-main);
-            cursor: pointer;
-            appearance: none;
-            -webkit-appearance: none;
-            max-width: 100%;
-        }
-        .filter-select:focus {
-            outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 0 4px rgba(220, 38, 38, 0.1);
-        }
-
-        .result-bar {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 2rem;
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
-        .btn-reset {
-            background: none;
-            border: none;
-            color: var(--primary);
-            font-family: 'Outfit', sans-serif;
-            font-size: 0.9rem;
-            font-weight: 600;
-            cursor: pointer;
-            padding: 0.3rem 0.2rem;
-            border-radius: 6px;
-        }
-        .btn-reset[hidden] { display: none; }
-
-        /* ---------- Project grid ---------- */
-        .project-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .project-card {
-            background: #fff;
-            border: 1px solid rgba(0, 0, 0, 0.07);
-            border-radius: 16px;
-            padding: 1.75rem;
-            display: flex;
-            flex-direction: column;
-            gap: 1.1rem;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);
-            transition: box-shadow 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
-        }
-        .project-card:hover {
-            transform: translateY(-3px);
-            border-color: rgba(220, 38, 38, 0.25);
-            box-shadow: 0 10px 28px rgba(220, 38, 38, 0.08);
-        }
-
-        /* The SE-xx code is the citation key from the abstract book, so it leads the card. */
-        .card-code {
-            font-family: var(--mono);
-            font-size: 0.78rem;
-            font-weight: 600;
-            letter-spacing: 0.06em;
-            color: var(--primary);
-            background: rgba(220, 38, 38, 0.08);
-            border: 1px solid rgba(220, 38, 38, 0.15);
-            border-radius: 6px;
-            padding: 0.25rem 0.55rem;
-            align-self: flex-start;
-        }
-
-        .card-title {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.12rem;
-            font-weight: 700;
-            line-height: 1.35;
-            color: var(--text-main);
-            margin: -0.4rem 0 0;
-        }
-
-        .people { display: flex; flex-direction: column; gap: 0.7rem; }
-        .person { display: flex; gap: 0.7rem; align-items: flex-start; }
-        .person svg { width: 16px; height: 16px; flex-shrink: 0; margin-top: 3px; }
-        .person-student svg { color: var(--primary); }
-        .person-sup svg { color: #94a3b8; }
-        .person-role {
-            display: block;
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            color: #94a3b8;
-            margin-bottom: 0.1rem;
-        }
-        .person-name { font-size: 0.95rem; font-weight: 600; color: var(--text-main); }
-        .person-sup .person-name { font-weight: 500; color: var(--text-muted); }
-        .person-mail {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.3rem;
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            word-break: break-all;
-        }
-        .person-mail:hover { color: var(--primary); }
-
-        .keywords { display: flex; flex-wrap: wrap; gap: 0.4rem; }
-        .kw {
-            font-size: 0.75rem;
-            color: var(--text-muted);
-            background: #f1f5f9;
-            border-radius: 9999px;
-            padding: 0.25rem 0.7rem;
-            line-height: 1.5;
-        }
-
-        details.abstract { border-top: 1px solid rgba(0, 0, 0, 0.06); padding-top: 1rem; }
-        details.abstract summary {
-            display: flex;
-            align-items: center;
-            gap: 0.4rem;
-            cursor: pointer;
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: var(--text-muted);
-            list-style: none;
-            border-radius: 6px;
-        }
-        details.abstract summary::-webkit-details-marker { display: none; }
-        details.abstract summary:hover { color: var(--primary); }
-        details.abstract summary .chev { transition: transform 0.2s ease; width: 16px; height: 16px; }
-        details.abstract[open] summary .chev { transform: rotate(180deg); }
-        details.abstract p {
-            margin-top: 0.9rem;
-            font-size: 0.88rem;
-            line-height: 1.75;
-            color: var(--text-muted);
-        }
-
-        .card-actions {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.6rem;
-            margin-top: auto;
-            padding-top: 0.3rem;
-        }
-        .link-chip {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.45rem;
-            padding: 0.55rem 1.05rem;
-            border-radius: 9999px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            border: 1px solid rgba(0, 0, 0, 0.1);
-            background: #fff;
-            color: var(--text-main);
-            transition: all 0.2s ease;
-        }
-        .link-chip svg { width: 15px; height: 15px; }
-        .link-chip:hover {
-            color: #fff;
-            background: var(--primary);
-            border-color: var(--primary);
-            box-shadow: 0 4px 12px rgba(220, 38, 38, 0.25);
-        }
-        .link-chip.is-empty {
-            color: #b6bfcc;
-            background: #f8fafc;
-            border-style: dashed;
-            cursor: not-allowed;
-        }
-
-        .empty-state {
-            grid-column: 1 / -1;
-            text-align: center;
-            padding: 4rem 2rem;
-            color: var(--text-muted);
-            border: 1px dashed rgba(0, 0, 0, 0.15);
-            border-radius: 16px;
-            background: rgba(255, 255, 255, 0.5);
-        }
-        .empty-state svg { width: 40px; height: 40px; color: #cbd5e1; margin-bottom: 1rem; }
-        .empty-state strong { display: block; color: var(--text-main); margin-bottom: 0.4rem; font-size: 1.05rem; }
-
-        mark { background: rgba(250, 204, 21, 0.4); color: inherit; border-radius: 3px; padding: 0 1px; }
-
-        /* Visible keyboard focus everywhere. */
-        a:focus-visible, button:focus-visible, summary:focus-visible,
-        input:focus-visible, select:focus-visible {
-            outline: 2px solid var(--primary);
-            outline-offset: 2px;
-        }
-
-        @media (max-width: 968px) {
-            .hero-banner { padding: 3rem 2rem; }
-            .content-body { padding: 2rem 2rem 3rem; }
-            .hero-banner h1 { font-size: 2.2rem; }
-            .hero-stats { gap: 1.75rem; }
-            .stat-num { font-size: 1.6rem; }
-        }
-        @media (max-width: 768px) {
-            .page-section { padding: 6rem 5% 3rem; }
-            .project-grid { grid-template-columns: 1fr; }
-        }
-        @media (max-width: 480px) {
-            .hero-banner { padding: 2.5rem 1.5rem; }
-            .content-body { padding: 1.75rem 1.25rem 2.5rem; }
-            .hero-banner h1 { font-size: 1.8rem; }
-            .project-card { padding: 1.4rem; }
-            .filter-select { flex: 1 1 100%; }
-        }
-        @media (prefers-reduced-motion: reduce) {
-            *, *::before, *::after {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-            }
-        }
-    </style>
 </head>
 <body>
     <!-- Background Elements -->
@@ -408,57 +46,90 @@
                         </div>
                         <span class="course-code">
                             <i data-lucide="flask-conical" style="width: 14px; height: 14px; display: inline-block; vertical-align: middle; margin-right: 4px;"></i>
-                            SE8101 &middot; SE 2020/2021 Batch
+                            SE8101
                         </span>
                         <h1>Research Project</h1>
                         <p class="lede">
-                            Final-year research of the Department of Software Engineering. Every project below
-                            was carried out by one student under the guidance of their supervisors, and presented
-                            in the SE 2020/2021 abstract book.
+                            The final-year research module of the Department of Software Engineering. Each
+                            student takes on a research problem of their own, works on it under an internal
+                            supervisor, and publishes the result in the departmental abstract book.
                         </p>
 
                         <div class="hero-stats">
                             <div>
-                                <div class="stat-num" id="statProjects">58</div>
-                                <div class="stat-label">Projects</div>
+                                <div class="stat-num" id="statProjects">&mdash;</div>
+                                <div class="stat-label">Projects archived</div>
                             </div>
                             <div>
-                                <div class="stat-num" id="statStudents">58</div>
-                                <div class="stat-label">Student researchers</div>
+                                <div class="stat-num" id="statBatches">&mdash;</div>
+                                <div class="stat-label">Batches published</div>
                             </div>
                             <div>
                                 <div class="stat-num" id="statSupervisors">&mdash;</div>
-                                <div class="stat-label">Supervisors</div>
-                            </div>
-                            <div>
-                                <div class="stat-num">2026</div>
-                                <div class="stat-label">Presented</div>
+                                <div class="stat-label">Supervisors involved</div>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="content-body">
-                    <div class="toolbar">
-                        <div class="search-wrap">
-                            <i data-lucide="search"></i>
-                            <label for="searchInput" class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;">Search projects</label>
-                            <input type="search" id="searchInput" placeholder="Search by title, student, supervisor or keyword" autocomplete="off">
+
+                    <!-- ---------- About ---------- -->
+                    <section class="rp-section">
+                        <h2><i data-lucide="info"></i> About the research project</h2>
+                        <div class="prose">
+                            <p>
+                                SE8101 is where Software Engineering undergraduates move from building software
+                                to investigating it. Instead of a group implementation project, each student
+                                takes a single research question, designs a study around it, and defends the
+                                result on the evidence they gather.
+                            </p>
+                            <p>
+                                Projects are carried out individually. A student works with one or more internal
+                                supervisors drawn from the Department of Software Engineering and, where the
+                                topic calls for it, from Computing &amp; Information Systems or Data Science.
+                                Supervisors guide scope, method, and rigour throughout the year; the research
+                                question and the work itself remain the student's own.
+                            </p>
+                            <p>
+                                Every completed project is written up as a structured abstract and collected in
+                                a batch abstract book, which the department publishes at the end of the year.
+                                Those books are archived below, and each project has its own page with the full
+                                abstract, keywords, supervisors, source code and dataset links, and any
+                                publications that came out of the work.
+                            </p>
                         </div>
-                        <label for="supFilter" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;">Filter by supervisor</label>
-                        <select class="filter-select" id="supFilter">
-                            <option value="">All supervisors</option>
-                        </select>
-                    </div>
+                    </section>
 
-                    <div class="result-bar">
-                        <span id="resultCount" aria-live="polite" role="status">Showing all 58 projects</span>
-                        <button type="button" class="btn-reset" id="resetBtn" hidden>Clear filters</button>
-                    </div>
+                    <!-- ---------- Rules ---------- -->
+                    <section class="rp-section">
+                        <h2><i data-lucide="clipboard-check"></i> Rules on selecting the project</h2>
+                        <p class="section-lede">
+                            What a student must satisfy before a topic is accepted.
+                        </p>
+                        <div class="rp-grid" id="rulesGrid"></div>
+                    </section>
 
-                    <div class="project-grid" id="projectGrid"></div>
+                    <!-- ---------- Supervisors ---------- -->
+                    <section class="rp-section">
+                        <h2><i data-lucide="users"></i> Internal supervisors</h2>
+                        <p class="section-lede">
+                            Academic staff who supervise SE8101 research projects. Contact a supervisor directly
+                            to discuss a topic in their area.
+                        </p>
+                        <div class="rp-grid" id="supervisorGrid"></div>
+                    </section>
+
+                    <!-- ---------- Batches ---------- -->
+                    <section class="rp-section">
+                        <h2><i data-lucide="library"></i> Project archive by batch</h2>
+                        <p class="section-lede">
+                            Open a batch to browse its projects, or download the abstract book as a PDF.
+                        </p>
+                        <div class="batch-grid" id="batchGrid"></div>
+                    </section>
+
                 </div>
-
             </div>
         </section>
     </main>
@@ -519,153 +190,124 @@
       </div>
     </footer>
 
+    <script src="data/research-meta.js"></script>
     <script src="data/se-2021-projects.js"></script>
     <script>
         (function () {
-            var projects = (typeof SE_2021_PROJECTS !== 'undefined') ? SE_2021_PROJECTS : [];
-
-            var grid = document.getElementById('projectGrid');
-            var searchInput = document.getElementById('searchInput');
-            var supFilter = document.getElementById('supFilter');
-            var resultCount = document.getElementById('resultCount');
-            var resetBtn = document.getElementById('resetBtn');
-
             function esc(s) {
-                return String(s)
+                return String(s == null ? '' : s)
                     .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
                     .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
             }
 
-            // Precompute a lowercase haystack per project so filtering stays cheap.
+            var rules = (typeof RESEARCH_RULES !== 'undefined') ? RESEARCH_RULES : [];
+            var supervisors = (typeof RESEARCH_SUPERVISORS !== 'undefined') ? RESEARCH_SUPERVISORS : [];
+            var batches = (typeof RESEARCH_BATCHES !== 'undefined') ? RESEARCH_BATCHES : [];
+            var projects = (typeof SE_2021_PROJECTS !== 'undefined') ? SE_2021_PROJECTS : [];
+
+            // ---- Stats ----
+            var live = batches.filter(function (b) { return b.href; });
+            var archived = batches.reduce(function (n, b) { return n + (b.count || 0); }, 0);
+            var supSet = {};
             projects.forEach(function (p) {
-                p._hay = [p.code, p.title, p.student, p.supervisors.join(' '), p.keywords.join(' ')]
-                    .join(' ').toLowerCase();
+                p.supervisors.forEach(function (s) { supSet[s] = true; });
             });
+            document.getElementById('statProjects').textContent = archived;
+            document.getElementById('statBatches').textContent = live.length;
+            document.getElementById('statSupervisors').textContent =
+                supervisors.length || Object.keys(supSet).length;
 
-            // ---- Populate stats + supervisor filter ----
-            var supCounts = {};
-            projects.forEach(function (p) {
-                p.supervisors.forEach(function (s) { supCounts[s] = (supCounts[s] || 0) + 1; });
-            });
-            var supNames = Object.keys(supCounts).sort(function (a, b) {
-                // Sort by surname, which is the last whitespace-separated token.
-                var sa = a.split(' ').pop(), sb = b.split(' ').pop();
-                return sa.localeCompare(sb);
-            });
-
-            document.getElementById('statProjects').textContent = projects.length;
-            document.getElementById('statStudents').textContent = projects.length;
-            document.getElementById('statSupervisors').textContent = supNames.length;
-
-            supNames.forEach(function (s) {
-                var o = document.createElement('option');
-                o.value = s;
-                o.textContent = s + ' (' + supCounts[s] + ')';
-                supFilter.appendChild(o);
-            });
-
-            // ---- Highlight matches in rendered text ----
-            function highlight(text, term) {
-                var safe = esc(text);
-                if (!term) return safe;
-                var pattern = term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-                return safe.replace(new RegExp('(' + pattern + ')', 'gi'), '<mark>$1</mark>');
-            }
-
-            function linkChip(url, label, icon) {
-                if (url) {
-                    return '<a class="link-chip" href="' + esc(url) + '" target="_blank" rel="noopener noreferrer">' +
-                           '<i data-lucide="' + icon + '"></i>' + label + '</a>';
+            // ---- Rules ----
+            // Entries whose text still starts with PLACEHOLDER are visibly flagged so the
+            // page never passes draft wording off as departmental policy.
+            document.getElementById('rulesGrid').innerHTML = rules.map(function (r) {
+                var draft = /^PLACEHOLDER/i.test(r.text || '');
+                var body = r.text;
+                if (draft) {
+                    body = String(r.text).replace(/^PLACEHOLDER\s*—?\s*/i, '');
+                    body = body.charAt(0).toUpperCase() + body.slice(1);
                 }
-                return '<span class="link-chip is-empty" title="' + label + ' link not published yet" aria-disabled="true">' +
-                       '<i data-lucide="' + icon + '"></i>' + label + ' &middot; n/a</span>';
-            }
-
-            function cardHtml(p, term) {
-                var sups = p.supervisors.map(function (s) {
-                    return '<span class="person-name">' + highlight(s, term) + '</span>';
-                }).join('<br>');
-
                 return '' +
-                '<article class="project-card">' +
-                    '<span class="card-code">' + esc(p.code) + '</span>' +
-                    '<h2 class="card-title">' + highlight(p.title, term) + '</h2>' +
-                    '<div class="people">' +
-                        '<div class="person person-student">' +
-                            '<i data-lucide="graduation-cap"></i>' +
-                            '<div>' +
-                                '<span class="person-role">Student</span>' +
-                                '<span class="person-name">' + highlight(p.student, term) + '</span><br>' +
-                                '<a class="person-mail" href="mailto:' + esc(p.email) + '">' +
-                                    '<i data-lucide="mail" style="width:13px;height:13px;"></i>' + esc(p.email) +
-                                '</a>' +
-                            '</div>' +
-                        '</div>' +
-                        '<div class="person person-sup">' +
-                            '<i data-lucide="user-check"></i>' +
-                            '<div>' +
-                                '<span class="person-role">' +
-                                    (p.supervisors.length > 1 ? 'Supervisors' : 'Supervisor') +
-                                '</span>' + sups +
-                            '</div>' +
-                        '</div>' +
-                    '</div>' +
-                    '<div class="keywords">' +
-                        p.keywords.map(function (k) {
-                            return '<span class="kw">' + highlight(k, term) + '</span>';
-                        }).join('') +
-                    '</div>' +
-                    '<details class="abstract">' +
-                        '<summary><i data-lucide="chevron-down" class="chev"></i> Read abstract</summary>' +
-                        '<p>' + esc(p.abstract) + '</p>' +
-                    '</details>' +
-                    '<div class="card-actions">' +
-                        linkChip(p.codeUrl, 'Code', 'code-2') +
-                        linkChip(p.datasetUrl, 'Dataset', 'database') +
-                    '</div>' +
+                '<article class="rp-card rule-card' + (draft ? ' is-placeholder' : '') + '">' +
+                    '<div class="rule-icon"><i data-lucide="' + esc(r.icon || 'check') + '"></i></div>' +
+                    (draft ? '<span class="placeholder-tag">Draft &mdash; not yet approved</span>' : '') +
+                    '<h3>' + esc(r.title) + '</h3>' +
+                    '<p>' + esc(body) + '</p>' +
                 '</article>';
+            }).join('');
+
+            // ---- Supervisors ----
+            var supGrid = document.getElementById('supervisorGrid');
+            if (!supervisors.length) {
+                supGrid.innerHTML =
+                    '<div class="empty-state">' +
+                        '<i data-lucide="user-plus"></i>' +
+                        '<strong>Supervisor list not published yet</strong>' +
+                        'Add staff details to RESEARCH_SUPERVISORS in data/research-meta.js and they will appear here.' +
+                    '</div>';
+            } else {
+                supGrid.innerHTML = supervisors.map(function (s) {
+                    var initials = String(s.name || '?').replace(/\([^)]*\)/g, '')
+                        .split(/\s+/).filter(Boolean).slice(-2)
+                        .map(function (w) { return w[0]; }).join('').toUpperCase();
+                    var avatar = s.photo
+                        ? '<img src="' + esc(s.photo) + '" alt="' + esc(s.name) + '" onerror="this.remove();">'
+                        : esc(initials);
+                    return '' +
+                    '<article class="rp-card sup-card">' +
+                        '<div class="sup-avatar">' + avatar + '</div>' +
+                        '<div class="sup-body">' +
+                            '<h3>' + esc(s.name) + '</h3>' +
+                            (s.title ? '<div class="sup-post">' + esc(s.title) + '</div>' : '') +
+                            (s.department ? '<div class="sup-dept">' + esc(s.department) + '</div>' : '') +
+                            (s.interests && s.interests.length
+                                ? '<div class="keywords" style="margin-top:0.7rem;">' +
+                                  s.interests.map(function (i) { return '<span class="kw">' + esc(i) + '</span>'; }).join('') +
+                                  '</div>'
+                                : '') +
+                            (s.email
+                                ? '<a class="sup-mail" href="mailto:' + esc(s.email) + '">' +
+                                  '<i data-lucide="mail" style="width:13px;height:13px;"></i>' + esc(s.email) + '</a>'
+                                : '') +
+                            (s.profile
+                                ? '<div><a class="sup-mail" href="' + esc(s.profile) + '" target="_blank" rel="noopener noreferrer">' +
+                                  '<i data-lucide="external-link" style="width:13px;height:13px;"></i>Profile</a></div>'
+                                : '') +
+                        '</div>' +
+                    '</article>';
+                }).join('');
             }
 
-            function render() {
-                var term = searchInput.value.trim().toLowerCase();
-                var sup = supFilter.value;
+            // ---- Batches ----
+            document.getElementById('batchGrid').innerHTML = batches.map(function (b) {
+                var open = !!b.href;
+                var inner = '' +
+                    '<div class="batch-year">' + esc(b.label || b.batch) + '</div>' +
+                    '<h3>' + esc(b.batch) + '</h3>' +
+                    '<p>' + esc(b.blurb) + '</p>' +
+                    '<div class="batch-meta">' +
+                        '<i data-lucide="' + (open ? 'folder-open' : 'clock') + '"></i>' +
+                        (open ? b.count + ' projects' + (b.year ? ' &middot; ' + esc(b.year) : '') : 'Coming soon') +
+                    '</div>';
 
-                var matches = projects.filter(function (p) {
-                    if (sup && p.supervisors.indexOf(sup) === -1) return false;
-                    if (term && p._hay.indexOf(term) === -1) return false;
-                    return true;
-                });
-
-                if (matches.length) {
-                    grid.innerHTML = matches.map(function (p) { return cardHtml(p, term); }).join('');
-                } else {
-                    grid.innerHTML =
-                        '<div class="empty-state">' +
-                            '<i data-lucide="search-x"></i>' +
-                            '<strong>No projects match that search</strong>' +
-                            'Try a different keyword, or clear the filters to see all ' + projects.length + ' projects.' +
-                        '</div>';
+                if (!open) {
+                    return '<article class="batch-card is-soon">' + inner + '</article>';
                 }
+                // The card is the link; the abstract book sits outside it so the two
+                // actions stay separately clickable and separately labelled.
+                return '' +
+                '<div>' +
+                    '<a class="batch-card" href="' + esc(b.href) + '">' + inner + '</a>' +
+                    (b.book
+                        ? '<div class="batch-actions">' +
+                              '<a class="link-chip" href="' + esc(b.book) + '" download>' +
+                                  '<i data-lucide="download"></i>Abstract book (PDF)</a>' +
+                          '</div>'
+                        : '') +
+                '</div>';
+            }).join('');
 
-                var filtered = term || sup;
-                resultCount.textContent = filtered
-                    ? 'Showing ' + matches.length + ' of ' + projects.length + ' projects'
-                    : 'Showing all ' + projects.length + ' projects';
-                resetBtn.hidden = !filtered;
-
-                lucide.createIcons();
-            }
-
-            searchInput.addEventListener('input', render);
-            supFilter.addEventListener('change', render);
-            resetBtn.addEventListener('click', function () {
-                searchInput.value = '';
-                supFilter.value = '';
-                render();
-                searchInput.focus();
-            });
-
-            render();
+            lucide.createIcons();
         })();
     </script>
 </body>

@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SE 2020/2021 Research Projects | SUSL Faculty of Computing</title>
+    <meta name="description" content="All 58 research projects of the SE 2020/2021 batch, Department of Software Engineering, Faculty of Computing, Sabaragamuwa University of Sri Lanka.">
+    <link rel="icon" type="image/png" href="images/pavicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="research.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <!-- Background Elements -->
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2" style="right: auto; left: 40%;"></div>
+
+    <nav class="navbar glass-effect">
+        <div class="logo">
+            <a href="index.html" style="display: flex; align-items: center; gap: 0.5rem;">
+                <img src="images/Logo Sab Transparent.png" alt="SUSL Logo" style="height: 40px; width: auto;" onerror="this.src=''; this.alt='SUSL';">
+                <i data-lucide="github" class="icon"></i>
+                <span>SUSL <span class="highlight">Computing</span></span>
+            </a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="https://www.sab.ac.lk/computing/" target="_blank">Faculty Website</a></li>
+            <li><a href="index.html">Home</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="page-section">
+            <div class="glass-card content-card">
+
+                <div class="hero-banner">
+                    <div class="hero-inner">
+                        <div>
+                            <a href="research-project.html" class="back-link">
+                                <i data-lucide="arrow-left" style="width: 18px; height: 18px;"></i> Back to Research Project
+                            </a>
+                        </div>
+                        <span class="course-code">
+                            <i data-lucide="flask-conical" style="width: 14px; height: 14px; display: inline-block; vertical-align: middle; margin-right: 4px;"></i>
+                            SE8101 &middot; Department of Software Engineering
+                        </span>
+                        <h1>SE 2020/2021 Batch</h1>
+                        <p class="lede">
+                            Every research project from the 2020/2021 intake, as presented in the departmental
+                            abstract book. Open a project for its full abstract, links and publications.
+                        </p>
+
+                        <a class="btn-on-dark" href="docs/Abstract_book_SE_SUSL_20_21_Batch.pdf" download>
+                            <i data-lucide="download"></i> Download abstract book (PDF)
+                        </a>
+
+                        <div class="hero-stats">
+                            <div>
+                                <div class="stat-num" id="statProjects">&mdash;</div>
+                                <div class="stat-label">Projects</div>
+                            </div>
+                            <div>
+                                <div class="stat-num" id="statStudents">&mdash;</div>
+                                <div class="stat-label">Student researchers</div>
+                            </div>
+                            <div>
+                                <div class="stat-num" id="statSupervisors">&mdash;</div>
+                                <div class="stat-label">Supervisors</div>
+                            </div>
+                            <div>
+                                <div class="stat-num">2026</div>
+                                <div class="stat-label">Presented</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-body">
+                    <div class="toolbar">
+                        <div class="search-wrap">
+                            <i data-lucide="search"></i>
+                            <label for="searchInput" class="sr-only">Search projects</label>
+                            <input type="search" id="searchInput" placeholder="Search by title, student, supervisor or keyword" autocomplete="off">
+                        </div>
+                        <label for="supFilter" class="sr-only">Filter by supervisor</label>
+                        <select class="filter-select" id="supFilter">
+                            <option value="">All supervisors</option>
+                        </select>
+                    </div>
+
+                    <div class="result-bar">
+                        <span id="resultCount" aria-live="polite" role="status">Loading projects&hellip;</span>
+                        <button type="button" class="btn-reset" id="resetBtn" hidden>Clear filters</button>
+                    </div>
+
+                    <div class="project-grid" id="projectGrid"></div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="glass-effect main-footer">
+      <div class="footer-inner">
+        <div class="footer-center">
+          <div class="container footer-grid">
+
+            <div class="footer-first column">
+              <div class="footer-social">
+                <h5>Postal Address</h5>
+                <span>Faculty of Computing, <br>Sabaragamuwa University of Sri Lanka, <br>P.O. Box 02, Belihuloya, 70140, Sri Lanka.</span>
+              </div>
+            </div>
+
+            <div class="footer-second column">
+              <div class="footer-social">
+                <h5>General Inquiries</h5>
+                <ul class="contact-list">
+                  <li><i class="fas fa-phone"></i> +94 (0)45 2 121 873</li>
+                  <li><i class="fas fa-envelope"></i> <a href="mailto:info@foc.sab.ac.lk">info@foc.sab.ac.lk</a></li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="footer-third column">
+              <div class="footer-social">
+                <h5>Social Media</h5>
+                <ul class="social-links">
+                  <li><a href="https://github.com/Sabaragamuwa-University-FOC" aria-label="GitHub" target="_blank"><i class="fab fa-github"></i></a></li>
+                  <li><a href="https://www.facebook.com/susl.computing" aria-label="Facebook"><i class="fab fa-facebook"></i></a></li>
+                  <li><a href="https://www.linkedin.com/company/susl-computing" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a></li>
+                  <li><a href="https://www.youtube.com/@susl-computing" aria-label="YouTube"><i class="fab fa-youtube"></i></a></li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="footer-four column">
+              <div class="footer-social">
+                <h5>Quick Links</h5>
+                <ul class="quick-links">
+                  <li><a href="https://forms.gle/6Tob5bF579oia89d7/" target="_blank">Web/SM Update Requests</a></li>
+                  <li><a href="https://www.sab.ac.lk/computing/vacancies" target="_blank">Vacancies</a></li>
+                  <li><a href="https://www.sab.ac.lk/computing/downloads" target="_blank">Downloads</a></li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="copyright">
+        <div class="container text-center">
+            © Copyright <a href="https://www.sab.ac.lk/computing/">SUSL Faculty of Computing</a> 2026. All Rights Reserved.
+        </div>
+      </div>
+    </footer>
+
+    <script src="data/se-2021-projects.js"></script>
+    <script>
+        (function () {
+            var projects = (typeof SE_2021_PROJECTS !== 'undefined') ? SE_2021_PROJECTS : [];
+
+            var grid = document.getElementById('projectGrid');
+            var searchInput = document.getElementById('searchInput');
+            var supFilter = document.getElementById('supFilter');
+            var resultCount = document.getElementById('resultCount');
+            var resetBtn = document.getElementById('resetBtn');
+
+            function esc(s) {
+                return String(s == null ? '' : s)
+                    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+                    .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+            }
+
+            // Precompute a lowercase haystack per project so filtering stays cheap.
+            projects.forEach(function (p) {
+                p._hay = [p.code, p.title, p.student, p.supervisors.join(' '), p.keywords.join(' ')]
+                    .join(' ').toLowerCase();
+            });
+
+            // ---- Stats + supervisor filter ----
+            var supCounts = {};
+            projects.forEach(function (p) {
+                p.supervisors.forEach(function (s) { supCounts[s] = (supCounts[s] || 0) + 1; });
+            });
+            var supNames = Object.keys(supCounts).sort(function (a, b) {
+                // Sort by surname, which is the last whitespace-separated token.
+                return a.split(' ').pop().localeCompare(b.split(' ').pop());
+            });
+
+            document.getElementById('statProjects').textContent = projects.length;
+            document.getElementById('statStudents').textContent = projects.length;
+            document.getElementById('statSupervisors').textContent = supNames.length;
+
+            supNames.forEach(function (s) {
+                var o = document.createElement('option');
+                o.value = s;
+                o.textContent = s + ' (' + supCounts[s] + ')';
+                supFilter.appendChild(o);
+            });
+
+            function highlight(text, term) {
+                var safe = esc(text);
+                if (!term) return safe;
+                var pattern = term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                return safe.replace(new RegExp('(' + pattern + ')', 'gi'), '<mark>$1</mark>');
+            }
+
+            function linkChip(url, label, icon) {
+                if (url) {
+                    return '<a class="link-chip" href="' + esc(url) + '" target="_blank" rel="noopener noreferrer">' +
+                           '<i data-lucide="' + icon + '"></i>' + label + '</a>';
+                }
+                return '<span class="link-chip is-empty" title="' + label + ' link not published yet" aria-disabled="true">' +
+                       '<i data-lucide="' + icon + '"></i>' + label + ' &middot; n/a</span>';
+            }
+
+            function cardHtml(p, term) {
+                var href = 'research-project-detail.html?id=' + encodeURIComponent(p.code);
+                var sups = p.supervisors.map(function (s) {
+                    return '<span class="person-name">' + highlight(s, term) + '</span>';
+                }).join('<br>');
+                var pubs = (p.publications || []).length;
+
+                return '' +
+                '<article class="project-card">' +
+                    '<span class="card-code">' + esc(p.code) + '</span>' +
+                    '<h2 class="card-title"><a href="' + href + '">' + highlight(p.title, term) + '</a></h2>' +
+                    '<div class="people">' +
+                        '<div class="person person-student">' +
+                            '<i data-lucide="graduation-cap"></i>' +
+                            '<div>' +
+                                '<span class="person-role">Student</span>' +
+                                '<span class="person-name">' + highlight(p.student, term) + '</span><br>' +
+                                '<a class="person-mail" href="mailto:' + esc(p.email) + '">' +
+                                    '<i data-lucide="mail" style="width:13px;height:13px;"></i>' + esc(p.email) +
+                                '</a>' +
+                            '</div>' +
+                        '</div>' +
+                        '<div class="person person-sup">' +
+                            '<i data-lucide="user-check"></i>' +
+                            '<div>' +
+                                '<span class="person-role">' +
+                                    (p.supervisors.length > 1 ? 'Supervisors' : 'Supervisor') +
+                                '</span>' + sups +
+                            '</div>' +
+                        '</div>' +
+                    '</div>' +
+                    '<div class="keywords">' +
+                        p.keywords.map(function (k) {
+                            return '<span class="kw">' + highlight(k, term) + '</span>';
+                        }).join('') +
+                        (pubs ? '<span class="kw" style="background:rgba(220,38,38,0.09);color:var(--primary);font-weight:600;">' +
+                                pubs + (pubs > 1 ? ' publications' : ' publication') + '</span>' : '') +
+                    '</div>' +
+                    '<div class="card-actions">' +
+                        '<a class="link-chip is-primary" href="' + href + '">' +
+                            '<i data-lucide="file-text"></i>View project</a>' +
+                        linkChip(p.codeUrl, 'Code', 'code-2') +
+                        linkChip(p.datasetUrl, 'Dataset', 'database') +
+                    '</div>' +
+                '</article>';
+            }
+
+            function render() {
+                var term = searchInput.value.trim().toLowerCase();
+                var sup = supFilter.value;
+
+                var matches = projects.filter(function (p) {
+                    if (sup && p.supervisors.indexOf(sup) === -1) return false;
+                    if (term && p._hay.indexOf(term) === -1) return false;
+                    return true;
+                });
+
+                if (matches.length) {
+                    grid.innerHTML = matches.map(function (p) { return cardHtml(p, term); }).join('');
+                } else {
+                    grid.innerHTML =
+                        '<div class="empty-state">' +
+                            '<i data-lucide="search-x"></i>' +
+                            '<strong>No projects match that search</strong>' +
+                            'Try a different keyword, or clear the filters to see all ' + projects.length + ' projects.' +
+                        '</div>';
+                }
+
+                var filtered = term || sup;
+                resultCount.textContent = filtered
+                    ? 'Showing ' + matches.length + ' of ' + projects.length + ' projects'
+                    : 'Showing all ' + projects.length + ' projects';
+                resetBtn.hidden = !filtered;
+
+                lucide.createIcons();
+            }
+
+            searchInput.addEventListener('input', render);
+            supFilter.addEventListener('change', render);
+            resetBtn.addEventListener('click', function () {
+                searchInput.value = '';
+                supFilter.value = '';
+                render();
+                searchInput.focus();
+            });
+
+            render();
+        })();
+    </script>
+</body>
+</html>
